@@ -1,0 +1,15 @@
+- Fix the encounters file to english version and remove dupes (DONE!)
+- Break first page in 3 files and do the files structure (DONE!)
+- Remake the first calculator page (DONE!)
+- Code Soft Reset Count 
+- Code Egg Hatching Count
+- Try to implement accounts and go to phase 2
+
+Phase 2
+- Database
+- Login and Register function and pages
+- Hunting Lists
+- Inventory (maybe)
+- Ladders (will change methods based on either I use inventory or not)
+- Dailies
+ 

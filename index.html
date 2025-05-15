@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shiny Center</title>
+    <link rel="icon" href="./Sprites/CRESSELIA.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Shiny Center</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Shiny Chain Calculator</a></li>
+                <li><a href="#what-will-it-be">Coming Soon</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <button id="help-btn" aria-label="Show Guide">
+        <i class="fa-solid fa-book"></i>
+    </button>
+
+    <div class="modal-overlay" id="guide-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-guide">&times;</span>
+            <h2>Guide</h2>
+            <p>Welcome to the Shiny Chain calculator by Krul!</p>
+
+            <p>Follow the steps to calculate your shiny chances:</p>
+
+            <ul>
+                <li>Enter the chain length.</li>
+                <li>Enable Shiny Charm if you have it.</li>
+                <li>Select the Pokémon you are hunting on the Hunting Details for detailed location information and
+                    check calculations with the encounters chances.</li>
+            </ul>
+
+            <p>You can check how Shiny Chain works <a
+                    href="https://pokemon-unbreakable-ties.fandom.com/wiki/Shiny_Chain" target="_blank">here</a>.</p>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <h2>Hunting Details</h2>
+                <div class="pokemon-info">
+                    <div class="select-wrapper">
+                        <label for="pokemon-select">Select Pokémon:</label>
+                        <select id="pokemon-select" onchange="displayPokemonInfo()">
+                        </select>
+                    </div>
+                    <img id="pokemon-image" src="" alt="Pokémon" />
+                </div>
+                <div class="route-info" id="route-info">
+                </div>
+            </div>
+        </div>
+
+        <div class="calculator">
+            <h1>Shiny Chain Calculator</h1>
+            <label for="chain-length">Chain Length:</label>
+            <input type="number" id="chain-length" min="0" placeholder="Enter the chain length"
+                oninput="calculateChances()" />
+
+            <div class="results">
+                <p id="fraction-result">Chance (Fraction): -</p>
+                <p id="percent-result">Chance (%): -</p>
+            </div>
+
+            <label for="shiny-charm" class="shiny-charm-label">
+                Shiny Charm
+                <input type="checkbox" id="shiny-charm" onchange="calculateChances()" />
+            </label>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <p>Place a Pokémon with an Outside of Battle Ability first in your party (even if fainted) to boost
+                    specific encounters:</p>
+                <ul>
+                    <li><span class="fire">Flash Fire</span> – 51% chance to encounter Fire-types, if possible.</li><br>
+                    <li><span class="grass">Harvest</span> – 51% chance to encounter Grass-types, if possible.</li><br>
+                    <li><span class="water">Storm Drain</span> – 51% chance to encounter Water-types, if possible.</li>
+                    <br>
+                    <li><span class="steel">Magnet Pull</span> – 51% chance to encounter Steel-types, if possible.</li>
+                    <br>
+                    <li><span class="electric">Static / Lightning Rod</span> – 51% chance to encounter Electric-types,
+                        if possible.</li><br>
+                    <li><span class="fairy">Cute Charm</span> – 66.7% chance for opposite-gender encounters, if
+                        possible.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-sentinel"></div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Created by Krul con perish</p>
+            <a href="https://discord.com/users/466643872290832414" target="_blank" class="discord-link">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/chaincalc.js"></script>
+</body>
+
+</html>
