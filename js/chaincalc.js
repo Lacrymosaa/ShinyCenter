@@ -83,8 +83,8 @@ function displayPokemonInfo() {
     const hasShinyCharm = document.getElementById('shiny-charm').checked;
     const base = hasShinyCharm ? chainLength + 1 + 3 : chainLength + 1;
 
-    image.src = `./Sprites/${selectedPokemon}.png`;
-    image.onerror = () => { image.src = './Sprites/SDITTO.png'; };
+    image.src = `./sprites/${selectedPokemon}.png`;
+    image.onerror = () => { image.src = './sprites/SDITTO.png'; };
 
     if (!pokemonData[selectedPokemon]) {
         routeInfo.innerHTML = '';
