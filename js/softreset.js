@@ -22,16 +22,16 @@ async function initialize() {
     const hopDuration = 200;
 
     const bgMap = {
-      sprigatito: "/img/grassnorock.png",
-      gimmighoul: "/img/grassground.png",
-      moltres:    "/img/magmamountain.png",
-      zapdos:     "/img/mountain.png",
-      shaymin:    "/img/grass.png",
-      cobalion:   "/img/cave.png",
-      thundurus:  "/img/farm.png",
-      tornadus:   "/img/farm.png",
-      landorus:   "/img/farm.png",
-      cosmog:     "/img/casino.png"
+      sprigatito: "./img/grassnorock.png",
+      gimmighoul: "./img/grassground.png",
+      moltres:    "./img/magmamountain.png",
+      zapdos:     "./img/mountain.png",
+      shaymin:    "./img/grass.png",
+      cobalion:   "./img/cave.png",
+      thundurus:  "./img/farm.png",
+      tornadus:   "./img/farm.png",
+      landorus:   "./img/farm.png",
+      cosmog:     "./img/casino.png"
     };
 
     function updateCounter() {
@@ -41,7 +41,7 @@ async function initialize() {
 
     function updateBackground() {
         const val = selectEl.value;
-        const url = bgMap[val] || bgMap['sprigatito'];
+        const url = bgMap[val] || bgMap['SPRIGATITO'];
         nursery.style.backgroundImage = `url('${url}')`;
     }
 
@@ -50,7 +50,7 @@ async function initialize() {
         updateBackground();
 
         sprite = new Image();
-        sprite.src = `./sprites/${selectEl.value}.png`;
+        sprite.src = `./sprites/${selectEl.value.toUpperCase()}.png`;
         sprite.style.position = 'absolute';
         sprite.style.width = '80px';
         sprite.style.height = '80px';
