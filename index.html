@@ -14,9 +14,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-brand">Shiny Center</a>
+            <button id="nav-toggle" aria-label="Abrir menu" class="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <ul class="nav-menu">
                 <li><a href="index.html">Shiny Chain Calculator</a></li>
-                <li><a href="#what-will-it-be">Coming Soon</a></li>
+                <li><a href="softreset.html">Soft Reset Counter</a></li>
+                <li><a href="egghatch.html">Egg Counter</a></li>
             </ul>
         </div>
     </nav>
@@ -30,19 +34,19 @@
         <div class="modal-content">
             <span class="close-btn" id="close-guide">&times;</span>
             <h2>Guide</h2>
-            <p>Welcome to the Shiny Chain calculator by Krul!</p>
+            <p>Welcome to the Shiny Chain Calculator by Krul!</p>
 
-            <p>Follow the steps to calculate your shiny chances:</p>
+            <p>This tool helps you estimate your odds of encountering a shiny Pokémon while chaining.</p>
 
+            <h3>How to Use:</h3>
             <ul>
-                <li>Enter the chain length.</li>
-                <li>Enable Shiny Charm if you have it.</li>
-                <li>Select the Pokémon you are hunting on the Hunting Details for detailed location information and
-                    check calculations with the encounters chances.</li>
+                <li>Enter your current chain length.</li>
+                <li>Toggle the Shiny Charm option if you have it.</li>
+                <li>Select the Pokémon you’re hunting in the <strong>Hunting Details</strong> section to see encounter
+                    locations and your calculated shiny chances.</li>
             </ul>
 
-            <p>You can check how Shiny Chain works <a
-                    href="https://pokemon-unbreakable-ties.fandom.com/wiki/Shiny_Chain" target="_blank">here</a>.</p>
+            <p>Want to understand how shiny chaining works? Learn more <a href="https://pokemon-unbreakable-ties.fandom.com/wiki/Shiny_Chain" target="_blank">here</a>.</p>
         </div>
     </div>
 
@@ -111,6 +115,7 @@
         </div>
     </footer>
 
+    <script src="js/utils.js"></script>
     <script src="js/chaincalc.js"></script>
 </body>
 

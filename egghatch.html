@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shiny Center</title>
+    <link rel="icon" href="./sprites/CRESSELIA.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Shiny Center</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Shiny Chain Calculator</a></li>
+                <li><a href="softreset.html">Soft Reset Counter</a></li>
+                <li><a href="egghatch.html">Egg Counter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <button id="help-btn" aria-label="Open Guide" title="Open Guide">
+        <i class="fa-solid fa-book" aria-hidden="true"></i>
+    </button>
+
+
+    <div class="modal-overlay" id="guide-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-guide">&times;</span>
+            <h2>Guide</h2>
+            <p>Welcome to the Shiny Chain calculator by Krul!</p>
+
+            <p>Follow the steps to calculate your shiny chances:</p>
+
+            <ul>
+                <li>Enter the chain length.</li>
+                <li>Enable Shiny Charm if you have it.</li>
+                <li>Select the Pokémon you are hunting on the Hunting Details for detailed location information and
+                    check calculations with the encounters chances.</li>
+            </ul>
+
+            <p>You can check how Shiny Chain works <a
+                    href="https://pokemon-unbreakable-ties.fandom.com/wiki/Shiny_Chain" target="_blank">here</a>.</p>
+        </div>
+    </div>
+
+    <div id="footer-sentinel"></div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Created by Krul con perish</p>
+            <a href="https://discord.com/users/466643872290832414" target="_blank" class="discord-link">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+</body>
+
+</html>

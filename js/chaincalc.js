@@ -28,18 +28,6 @@ function parseEncounters(encounters) {
 
 let pokemonData = {};
 
-function showGuide() {
-    const modal = document.getElementById('guide-modal');
-    modal.classList.add('visible');
-    document.body.style.overflow = 'hidden';
-}
-
-function hideGuide() {
-    const modal = document.getElementById('guide-modal');
-    modal.classList.remove('visible');
-    document.body.style.overflow = 'auto';
-}
-
 async function initialize() {
     const encounters = await fetchEncounters();
     pokemonData = parseEncounters(encounters);
@@ -51,16 +39,6 @@ async function initialize() {
 
     document.getElementById('close-guide')
         .addEventListener('click', hideGuide);
-}
-
-function initFooterObserver() {
-    const sentinel = document.getElementById('footer-sentinel');
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            document.body.classList.toggle('footer-visible', e.isIntersecting);
-        });
-    }, { root: null, threshold: 0 });
-    obs.observe(sentinel);
 }
 
 function populatePokemonSelect() {
@@ -79,9 +57,9 @@ function displayPokemonInfo() {
     const image = document.getElementById('pokemon-image');
     const routeInfo = document.getElementById('route-info');
     const chainLength = parseInt(document.getElementById('chain-length').value) || 0;
-    if (chainLength > 1023) chainLength = 1023;
     const hasShinyCharm = document.getElementById('shiny-charm').checked;
     const base = hasShinyCharm ? chainLength + 1 + 3 : chainLength + 1;
+    if (base > 1024) base = 1024;
 
     image.src = `./sprites/${selectedPokemon}.png`;
     image.onerror = () => { image.src = './sprites/SDITTO.png'; };
@@ -124,9 +102,9 @@ function displayPokemonInfo() {
 
 function calculateChances() {
     let chainLength = parseInt(document.getElementById('chain-length').value) || 0;
-    if (chainLength > 1023) chainLength = 1023;
     const hasShinyCharm = document.getElementById('shiny-charm').checked;
     const base = hasShinyCharm ? chainLength + 1 + 3 : chainLength + 1;
+    if (base > 1024) base = 1024;
     const fraction = `1/${Math.round(1024 / base)}`;
     const percentage = ((base / 1024) * 100).toFixed(3);
 
