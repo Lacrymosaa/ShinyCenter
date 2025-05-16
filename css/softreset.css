@@ -21,6 +21,10 @@
   flex-direction: column;
   gap: 20px;
   position: relative;
+  transition: transform 0.3s ease;
+}
+.soft-box:hover {
+  transform: translateY(-5px);
 }
 .nursery-box {
   background-image: url("/img/mountain.png");

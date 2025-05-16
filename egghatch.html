@@ -7,6 +7,8 @@
     <title>Shiny Center</title>
     <link rel="icon" href="./sprites/CRESSELIA.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/softreset.css" />
+    <link rel="stylesheet" href="css/egghatch.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
@@ -30,20 +32,89 @@
     <div class="modal-overlay" id="guide-modal">
         <div class="modal-content">
             <span class="close-btn" id="close-guide">&times;</span>
-            <h2>Guide</h2>
-            <p>Welcome to the Shiny Chain calculator by Krul!</p>
+            <h2>Egg Hatcher Counter Guide</h2>
+            <p>Ready to start your Egg hunt? Here's how to use the Egg Hatcher Counter:</p>
 
-            <p>Follow the steps to calculate your shiny chances:</p>
-
+            <h3>Steps:</h3>
             <ul>
-                <li>Enter the chain length.</li>
-                <li>Enable Shiny Charm if you have it.</li>
-                <li>Select the Pokémon you are hunting on the Hunting Details for detailed location information and
-                    check calculations with the encounters chances.</li>
+                <li>Head to <strong>Nightingale Town</strong>.</li>
+                <li>Leave the two Pokémon you want to breed at the Daycare.</li>
+                <li>Collect eggs from the Old Man standing in front of the building.</li>
+                <li>Each time you hatch an egg, click to increment the counter and keep track of your progress!</li>
             </ul>
 
-            <p>You can check how Shiny Chain works <a
-                    href="https://pokemon-unbreakable-ties.fandom.com/wiki/Shiny_Chain" target="_blank">here</a>.</p>
+            <p>Good Luck!</p>
+
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="main-egghatch">
+            <section class="egg-counter">
+                <div class="counter-wrapper">
+                    <div class="counter-bar" id="counter">0</div>
+                </div>
+                <button class="space-button" id="space-btn">+</button>
+                <button class="reset-button" id="reset-btn">⟳</button>
+            </section>
+        </div>
+
+        <div class="reset-modal-overlay" id="reset-modal">
+            <div class="reset-modal-content">
+                <p>Do you really want to reset the counter?</p>
+                <div class="reset-modal-buttons">
+                    <button id="confirm-reset">Yes</button>
+                    <button id="cancel-reset">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-guide">
+                <p>Use a Pokémon with <span class="fire">Flame Body</span>, <span class="fire">Magma Armor</span>, or
+                    <span class="fire">Steam Engine</span> in your party to hatch eggs twice as fast.</p>
+                <div class="breeding-card">
+                    <a href="https://pokemon-unbreakable-ties.fandom.com/wiki/Day_Care#How_Does_Breeding_Occur?"
+                        target="_blank">
+                        <img src="./sprites/TREECKO.png" alt="Treecko Icon" class="icon"> Compatibility Guide
+                    </a>
+                </div>
+                <div class="breeding-card">
+                    <a href="https://pokemon-unbreakable-ties.fandom.com/wiki/Day_Care#Exception_to_the_First-Stage_Rule:_Baby_Pok%C3%A9mon"
+                        target="_blank">
+                        <img src="./sprites/AZURILL.png" alt="Azurill Icon" class="icon"> Baby Pokémon
+                    </a>
+                </div>
+                <div class="breeding-card">
+                    <a href="https://pokemon-unbreakable-ties.fandom.com/wiki/Day_Care#Exception_to_the_First-Stage_Rule:_Baby_Pok%C3%A9mon"
+                        target="_blank">
+                        <img src="./sprites/VULPIX_1.png" alt="Vulpix Icon" class="icon"> Regional Form
+                    </a>
+                </div>
+                <div class="breeding-card">
+                    <a href="https://pokemon-unbreakable-ties.fandom.com/wiki/Day_Care#Inheriting_Natures"
+                        target="_blank">
+                        <img src="./sprites/LITTEN.png" alt="Litten Icon" class="icon"> Inheriting Natures
+                    </a>
+                </div>
+                <div class="breeding-card">
+                    <a href="https://pokemon-unbreakable-ties.fandom.com/wiki/Day_Care#Inheriting_IVs" target="_blank">
+                        <img src="./sprites/MIMIKYU.png" alt="Mimikyu Icon" class="icon"> Inheriting IVs
+                    </a>
+                </div>
+                <div class="breeding-card">
+                    <a href="https://pokemon-unbreakable-ties.fandom.com/wiki/Day_Care#Inheriting_Abilities"
+                        target="_blank">
+                        <img src="./sprites/CARVANHA.png" alt="Carvanha Icon" class="icon"> Inheriting Abilities
+                    </a>
+                </div>
+                <div class="breeding-card">
+                    <a href="https://pokemon-unbreakable-ties.fandom.com/wiki/Day_Care#Inheriting_Moves"
+                        target="_blank">
+                        <img src="./sprites/SHINX.png" alt="Shinx Icon" class="icon"> Inheriting Moves
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -59,6 +130,7 @@
     </footer>
 
     <script src="js/utils.js"></script>
+    <script src="js/egghatch.js"></script>
 </body>
 
 </html>

@@ -3,14 +3,17 @@ async function initialize() {
     document.getElementById('help-btn').addEventListener('click', showGuide);
     document.getElementById('close-guide').addEventListener('click', hideGuide);
 
-    const selectEl         = document.getElementById('pokemon-select');
-    const counterEl        = document.getElementById('counter');
-    const spaceBtn         = document.getElementById('space-btn');
-    const resetBtn         = document.getElementById('reset-btn');
-    const nursery          = document.getElementById('nursery');
-    const resetModal       = document.getElementById('reset-modal');
-    const confirmResetBtn  = document.getElementById('confirm-reset');
-    const cancelResetBtn   = document.getElementById('cancel-reset');
+    const selectEl = document.getElementById('pokemon-select');
+    if (selectEl) {
+        selectEl.addEventListener('change', () => initSprite());
+    }
+    const counterEl = document.getElementById('counter');
+    const spaceBtn = document.getElementById('space-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const nursery = document.getElementById('nursery');
+    const resetModal = document.getElementById('reset-modal');
+    const confirmResetBtn = document.getElementById('confirm-reset');
+    const cancelResetBtn = document.getElementById('cancel-reset');
 
     let count = parseInt(localStorage.getItem('softreset-count')) || 0;
 
@@ -22,16 +25,16 @@ async function initialize() {
     const hopDuration = 200;
 
     const bgMap = {
-      sprigatito: "./img/grassnorock.png",
-      gimmighoul: "./img/grassground.png",
-      moltres:    "./img/magmamountain.png",
-      zapdos:     "./img/mountain.png",
-      shaymin:    "./img/grass.png",
-      cobalion:   "./img/cave.png",
-      thundurus:  "./img/farm.png",
-      tornadus:   "./img/farm.png",
-      landorus:   "./img/farm.png",
-      cosmog:     "./img/casino.png"
+        sprigatito: "./img/grassnorock.png",
+        gimmighoul: "./img/grassground.png",
+        moltres: "./img/magmamountain.png",
+        zapdos: "./img/mountain.png",
+        shaymin: "./img/grass.png",
+        cobalion: "./img/cave.png",
+        thundurus: "./img/farm.png",
+        tornadus: "./img/farm.png",
+        landorus: "./img/farm.png",
+        cosmog: "./img/casino.png"
     };
 
     function updateCounter() {
@@ -59,7 +62,7 @@ async function initialize() {
         position.x = (nursery.clientWidth - 80) / 2;
         position.y = (nursery.clientHeight - 80) / 2;
         sprite.style.left = position.x + 'px';
-        sprite.style.top  = position.y + 'px';
+        sprite.style.top = position.y + 'px';
         nursery.appendChild(sprite);
     }
 
@@ -70,7 +73,7 @@ async function initialize() {
         position.x = Math.max(0, Math.min(position.x + dx, nursery.clientWidth - 80));
         position.y = Math.max(0, Math.min(position.y + dy, nursery.clientHeight - 80));
         sprite.style.left = position.x + 'px';
-        sprite.style.top  = position.y + 'px';
+        sprite.style.top = position.y + 'px';
         const dirScale = dx > 0 ? -1 : 1;
         sprite.animate([
             { transform: `scaleX(${dirScale}) translateY(0)` },
