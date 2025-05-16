@@ -5,8 +5,17 @@ async function initialize() {
 
     const selectEl = document.getElementById('pokemon-select');
     if (selectEl) {
-        selectEl.addEventListener('change', () => initSprite());
+        const savedPokemon = localStorage.getItem('selected-pokemon');
+        if (savedPokemon) {
+            selectEl.value = savedPokemon;
+        }
+
+        selectEl.addEventListener('change', () => {
+            localStorage.setItem('selected-pokemon', selectEl.value);
+            initSprite();
+        });
     }
+
     const counterEl = document.getElementById('counter');
     const spaceBtn = document.getElementById('space-btn');
     const resetBtn = document.getElementById('reset-btn');
@@ -106,8 +115,6 @@ async function initialize() {
         }
     });
     spaceBtn.addEventListener('click', increment);
-
-    selectEl.addEventListener('change', () => initSprite());
 
     updateCounter();
     initSprite();
