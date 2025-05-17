@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shiny Center</title>
+    <link rel="icon" href="./sprites/CRESSELIA.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/huntlist.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Shiny Center</a>
+            <button id="nav-toggle" aria-label="Abrir menu" class="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Shiny Chain Calculator</a></li>
+                <li><a href="softreset.html">Soft Reset Counter</a></li>
+                <li><a href="egghatch.html">Egg Counter</a></li>
+                <li><a href="huntlist.html">Hunting List</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <button id="help-btn" aria-label="Open Guide" title="Open Guide">
+        <i class="fa-solid fa-book" aria-hidden="true"></i>
+    </button>
+
+
+    <div class="modal-overlay" id="guide-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-guide">&times;</span>
+            <h2>Guide</h2>
+            <p>Plan and prioritize your shiny hunts with the Hunting List feature!</p>
+
+            <h3>How it works:</h3>
+            <ul>
+                <li>Use the search bar to quickly find the Pokémon you want. Only Pokémon available in the game will appear in the list.</li>
+                <li>Drag and drop Pokémon icons from the right side into the list on the left to build your hunting queue.</li>
+                <li>Organize your targets by priority by reordering them in the list.</li>
+                <li>Each Pokémon in your list will show the best route or location where it can be found.</li>
+                <li>To remove a Pokémon from your list, simply drag it back to the right.</li>
+            </ul>
+
+            <p>This tool helps you stay focused and makes your hunting sessions faster and more efficient!</p>
+        </div>
+    </div>
+
+    <div class="main-huntlist">
+        <div class="huntlist-left">
+            <input type="text" id="pokemon-search" placeholder="Search Pokémon...">
+            <div class="pokemon-list" id="pokemon-list"></div>
+        </div>
+        <div class="huntlist-right" id="huntlist-right">
+            <div class="priority-header">
+                <div class="cell priority-col">Order</div>
+                <div class="cell name-col">Name</div>
+                <div class="cell spot-col">Best Spot</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-sentinel"></div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Created by Krul con perish</p>
+            <a href="https://discord.com/users/466643872290832414" target="_blank" class="discord-link">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/huntlist.js"></script>
+</body>
+
+</html>

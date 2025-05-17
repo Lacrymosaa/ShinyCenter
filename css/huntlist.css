@@ -1,0 +1,97 @@
+.main-huntlist {
+  display: flex;
+  gap: 5px;
+  padding: 15px;
+  width: 90vw;
+  max-width: 1100px;
+  margin: 10px auto;
+  background: rgba(50,50,50,0.8);
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 70vh;
+}
+.huntlist-left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(26,26,26,0.95);
+  padding: 20px;
+  border-radius: 8px;
+  height: 70vh;
+}
+#pokemon-search {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 10px;
+  background: #2e2e2e;
+  color: #f5f5f5;
+  font-size: 1rem;
+}
+.pokemon-list {
+  height: calc(100% - 50px); 
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 60px);
+  grid-auto-rows: 60px;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+}
+.pokemon-item {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  margin: 5px;
+  transition: transform 0.2s ease, background 0.2s;
+}
+.pokemon-item:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.15);
+}
+.pokemon-item img {
+  max-width: 80%;
+  max-height: 80%;
+}
+.huntlist-right {
+  width: 55%;
+  background: rgba(26,26,26,0.95);
+  border-radius: 8px;
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.priority-header,
+.priority-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1.5fr;
+  align-items: center;
+  padding: 8px 0;
+}
+.priority-header {
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 8px;
+}
+.priority-row {
+  background: rgba(60,60,60,0.8);
+  margin-bottom: 6px;
+  border-radius: 6px;
+  cursor: move;
+  transition: background 0.2s ease;
+}
+.priority-row.drag-over {
+  background: rgba(80,80,80,0.9);
+}
+.priority-row .cell {
+  padding: 0 10px;
+  color: #f5f5f5;
+}
